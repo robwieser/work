@@ -32,15 +32,15 @@
     Ab welcher Dauerlast (% eines Kerns) eine Instanz als auffaellig gilt (Default: 10).
 
 .EXAMPLE
-    .\Get-ProcessBurnRate.ps1 -SearchBase "OU=FARMP10,OU=WTS 10.25,OU=Servers,OU=AHP Infrastructure Objects,DC=medi,DC=local" -OutputCsv C:\temp\rwi\ahplogon.csv
+    .\Get-ProcessBurnRate.ps1 -SearchBase "OU=FARMP10,OU=WTS 10.25,OU=Servers,OU=AHP Infrastructure Objects,DC=contoso,DC=local" -OutputCsv C:\temp\rwi\ahplogon.csv
 
 .EXAMPLE
     # Mehrere AHP-Komponenten auf einmal vergleichen
-    .\Get-ProcessBurnRate.ps1 -SearchBase "OU=FARMP10,...,DC=medi,DC=local" -ProcessName AHPLogon,'AHP Session Manager'
+    .\Get-ProcessBurnRate.ps1 -SearchBase "OU=FARMP10,...,DC=contoso,DC=local" -ProcessName AHPLogon,'AHP Session Manager'
 
 .EXAMPLE
     # Nur die zehn Server aus der Logauswertung
-    .\Get-ProcessBurnRate.ps1 -ComputerName sr00045270,sr00045273,sr00045305 -ProcessName AHPLogon
+    .\Get-ProcessBurnRate.ps1 -ComputerName srv-ts01,srv-ts02,srv-ts05 -ProcessName AHPLogon
 #>
 [CmdletBinding(DefaultParameterSetName = 'OU')]
 param(

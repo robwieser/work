@@ -33,10 +33,10 @@
 
 .EXAMPLE
     # Erster Lauf: immer mit -Diagnose, um zu sehen was in der Umgebung tatsächlich geloggt wird
-    .\Find-FslogixTempProfiles.ps1 -SearchBase "OU=FARMP10,OU=WTS 10.25,OU=Servers,OU=AHP Infrastructure Objects,DC=medi,DC=local" -DaysBack 7 -Diagnose
+    .\Find-FslogixTempProfiles.ps1 -SearchBase "OU=FARMP10,OU=WTS 10.25,OU=Servers,OU=AHP Infrastructure Objects,DC=contoso,DC=local" -DaysBack 7 -Diagnose
 
 .EXAMPLE
-    .\Find-FslogixTempProfiles.ps1 -SearchBase "OU=FARMP10,...,DC=medi,DC=local" -DaysBack 7 -OutputCsv C:\temp\rwi\TempProfiles.csv
+    .\Find-FslogixTempProfiles.ps1 -SearchBase "OU=FARMP10,...,DC=contoso,DC=local" -DaysBack 7 -OutputCsv C:\temp\rwi\TempProfiles.csv
 #>
 [CmdletBinding()]
 param(
@@ -311,7 +311,7 @@ $AnalyzeBlock = {
                     } elseif ($time) { $when = $time }
 
                     # Benutzer bevorzugt direkt aus der Meldung ziehen
-                    # ("LoadProfile failed. Version: x User: u003344. SID: S-1-5-... SessionId: 101.")
+                    # ("LoadProfile failed. Version: x User: u000001. SID: S-1-5-... SessionId: 101.")
                     if ($msg -match '(?i)\bUser:\s*(?<u>[^\s.,;]+)') { $user = $Matches.u }
                     elseif ($msg -match "(?i)is using (?<u>[^\s']+)'s") { $user = $Matches.u }
 

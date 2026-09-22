@@ -21,7 +21,7 @@
     wie das Nachher-Fenster (bis jetzt).
 
 .EXAMPLE
-    .\Compare-GppFixEffect.ps1 -SearchBase 'OU=FARMP10,OU=WTS 10.25,OU=Servers,OU=AHP Infrastructure Objects,DC=medi,DC=local' -Cutoff '2026-09-22 12:00'
+    .\Compare-GppFixEffect.ps1 -SearchBase 'OU=FARMP10,OU=WTS 10.25,OU=Servers,OU=AHP Infrastructure Objects,DC=contoso,DC=local' -Cutoff '2026-09-22 12:00'
 
 .NOTES
     Die CSE-Namen im Operational-Log sind sprachabhaengig. Bei deutschsprachigem OS

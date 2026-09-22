@@ -22,7 +22,7 @@
     danach laeuft der Logoff meist von selbst durch.
 
 .PARAMETER Session
-    Ein oder mehrere Ziele in der Form "Server:SessionId", z. B. "sr00045305:4".
+    Ein oder mehrere Ziele in der Form "Server:SessionId", z. B. "srv-ts05:4".
     Diese Angaben stehen genau so in der Spalte Computer/SessionId von Find-FslogixOrphanedDisks.
 
 .PARAMETER KillNonResponding
@@ -30,10 +30,10 @@
     Unterstuetzt -WhatIf und -Confirm. Systemprozesse werden nie angefasst.
 
 .EXAMPLE
-    .\Get-StuckSessionProcesses.ps1 -Session sr00045305:4, sr00045270:72, sr00045273:3, sr00045273:11
+    .\Get-StuckSessionProcesses.ps1 -Session srv-ts05:4, srv-ts01:72, srv-ts02:3, srv-ts02:11
 
 .EXAMPLE
-    .\Get-StuckSessionProcesses.ps1 -Session sr00045305:4 -KillNonResponding -WhatIf
+    .\Get-StuckSessionProcesses.ps1 -Session srv-ts05:4 -KillNonResponding -WhatIf
 #>
 [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High')]
 param(

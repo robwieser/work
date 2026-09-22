@@ -42,20 +42,20 @@
 
 .EXAMPLE
     # Nur berichten - die Server aus der Logauswertung
-    .\Find-FslogixOrphanedDisks.ps1 -ComputerName sr00045370,sr00045273,sr00045290,sr00045305,sr00045331,sr00045332,sr00045354,sr00045363,sr00045270,sr00045279
+    .\Find-FslogixOrphanedDisks.ps1 -ComputerName srv-ts10,srv-ts02,srv-ts04,srv-ts05,srv-ts06,srv-ts07,srv-ts08,srv-ts09,srv-ts01,srv-ts03
 
 .EXAMPLE
     # Ganze Farm pruefen
-    .\Find-FslogixOrphanedDisks.ps1 -SearchBase "OU=FARMP10,OU=WTS 10.25,OU=Servers,OU=AHP Infrastructure Objects,DC=medi,DC=local"
+    .\Find-FslogixOrphanedDisks.ps1 -SearchBase "OU=FARMP10,OU=WTS 10.25,OU=Servers,OU=AHP Infrastructure Objects,DC=contoso,DC=local"
 
 .EXAMPLE
     # Erst simulieren, dann wirklich aufloesen
-    .\Find-FslogixOrphanedDisks.ps1 -ComputerName sr00045370 -Fix -WhatIf
-    .\Find-FslogixOrphanedDisks.ps1 -ComputerName sr00045370 -Fix
+    .\Find-FslogixOrphanedDisks.ps1 -ComputerName srv-ts10 -Fix -WhatIf
+    .\Find-FslogixOrphanedDisks.ps1 -ComputerName srv-ts10 -Fix
 
 .EXAMPLE
     # Gezielt einen Benutzer freiraeumen
-    .\Find-FslogixOrphanedDisks.ps1 -SearchBase "OU=FARMP10,...,DC=medi,DC=local" -User u003344 -Fix
+    .\Find-FslogixOrphanedDisks.ps1 -SearchBase "OU=FARMP10,...,DC=contoso,DC=local" -User u000001 -Fix
 #>
 [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High', DefaultParameterSetName = 'OU')]
 param(

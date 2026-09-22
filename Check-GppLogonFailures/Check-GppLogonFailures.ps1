@@ -20,7 +20,7 @@
     Alle Rohdaten werden zusaetzlich als CSV abgelegt.
 
 .PARAMETER SearchBase
-    DN der OU, z.B. 'OU=FARMP10,OU=WTS 10.25,OU=Servers,OU=AHP Infrastructure Objects,DC=medi,DC=local'
+    DN der OU, z.B. 'OU=FARMP10,OU=WTS 10.25,OU=Servers,OU=AHP Infrastructure Objects,DC=contoso,DC=local'
 
 .PARAMETER Days
     Rueckblick in Tagen. Default 14. Achtung: die Spalte AppLogAb zeigt, wie weit das
@@ -28,7 +28,7 @@
     effektive Zeitraum kuerzer als angefordert.
 
 .EXAMPLE
-    .\Check-GppLogonFailures.ps1 -SearchBase 'OU=FARMP10,OU=Servers,DC=medi,DC=local' -Days 21
+    .\Check-GppLogonFailures.ps1 -SearchBase 'OU=FARMP10,OU=Servers,DC=contoso,DC=local' -Days 21
 
 .NOTES
     Voraussetzung: RSAT ActiveDirectory-Modul, PowerShell-Remoting (WinRM 5985) auf den
